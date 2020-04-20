@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ActivationManager : MonoBehaviour {
 	[SerializeField] private GameObject[] _menuButtons;
-	[SerializeField] private GameObject _activeGameObject;
+	public GameObject _activeGameObject;
 
 	private void Start() {
 		Subscribe(_menuButtons, Clicked);
