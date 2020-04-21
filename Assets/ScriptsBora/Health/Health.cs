@@ -6,13 +6,15 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
     [SerializeField]
-    int health;
+    private int health;
     [SerializeField]
-    int heartsAmount;
-    
-    public Image[] hearts;
-    public Sprite fullHeart;
-    public Sprite emptyHeart;
+    private int heartsAmount;
+    [SerializeField]
+    private Image[] hearts;
+    [SerializeField]
+    private Sprite fullHeart;
+    [SerializeField]
+    private Sprite emptyHeart;
 
     void Update()
     {
