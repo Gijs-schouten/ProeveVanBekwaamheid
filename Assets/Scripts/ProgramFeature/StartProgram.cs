@@ -11,18 +11,12 @@ public class StartProgram : MonoBehaviour
     {
         if (panel != null)
         {
-            bool isActive = panel.activeSelf;
-            panel.SetActive(!isActive);
+            Animator animator = panel.GetComponent<Animator>();
+            if(animator != null)
+            {
+                bool isOpen = animator.GetBool("Open");
+                animator.SetBool("Open", !isOpen);
+            }
         } 
-    }
-
-    public void RightAnswer()
-    {
-        print("you are good");
-    }
-
-    public void WrongAnswer()
-    {
-        print("you are bad");
     }
 }

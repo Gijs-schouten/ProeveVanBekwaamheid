@@ -7,8 +7,13 @@ public class Movement : MonoBehaviour
     private Rigidbody2D _rB;
     private bool _facingRight;
     private Jump _jump;
+    private float _horizontalMove;
 
-    public float movementSpeed = 15;
+
+    [SerializeField]
+    private Animator anim;
+
+    public float movementSpeed;
 
     void Start()
     {
@@ -18,8 +23,17 @@ public class Movement : MonoBehaviour
 
     void FixedUpdate()
     {
+        _horizontalMove = Input.GetAxisRaw("Horizontal") * movementSpeed;
+        anim.SetFloat("Speed", Mathf.Abs(_horizontalMove));
+         
         float horizontal = Input.GetAxis("Horizontal");
-        Moving(horizontal);
+
+        print(horizontal);
+
+        if (Input.GetButtonDown("Horizontal"))
+        {
+            Moving(horizontal);
+        }
         if (_jump.IsGrounded())
         {
             Flip(horizontal);
@@ -28,12 +42,15 @@ public class Movement : MonoBehaviour
 
     private void Moving(float horizontal)
     {
-        _rB.velocity = new Vector2(horizontal * movementSpeed, _rB.velocity.y);
+              //horizontal = Input.GetAxis("Horizontal");
+             Vector3 movement = new Vector3(horizontal, 0f, 0f);
+             transform.position += movement * Time.deltaTime * movementSpeed;
+            //_rB.velocity = new Vector2(horizontal * movementSpeed, _rB.velocity.y);
     }
 
     private void Flip (float horizontal)
     {
-        if (horizontal > 0 && !_facingRight || horizontal < 0 && _facingRight)
+        if (horizontal < 0 && !_facingRight || horizontal > 0 && _facingRight)
         {
             _facingRight = !_facingRight;
             Vector2 theScale = transform.localScale;
