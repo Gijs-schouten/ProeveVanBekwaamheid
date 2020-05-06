@@ -5,13 +5,13 @@ using UnityEngine;
 public class StartProgram : MonoBehaviour
 {
     [SerializeField]
-    private GameObject panel;
+    private GameObject _panel;
 
     public void ToggleCanvas()
     {
-        if (panel != null)
+        if (_panel != null)
         {
-            Animator animator = panel.GetComponent<Animator>();
+            Animator animator = _panel.GetComponent<Animator>();
             if(animator != null)
             {
                 bool isOpen = animator.GetBool("Open");
