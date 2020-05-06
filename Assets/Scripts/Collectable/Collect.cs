@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Collect : MonoBehaviour
 {
@@ -8,7 +6,8 @@ public class Collect : MonoBehaviour
     {
         if (other.tag == "collectable")
         {
-            Debug.Log("yeah nice cool woohoo");
+//            CollectCounter.collectedValue += 1;
+            Debug.Log("collected");
             Destroy(other.gameObject);
         }
     }
