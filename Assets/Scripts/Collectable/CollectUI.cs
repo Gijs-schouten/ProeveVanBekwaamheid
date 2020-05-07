@@ -17,6 +17,6 @@ public class CollectUI : MonoBehaviour
 
     public void SetValue(int amount)
     {
-        _collected.text = "Collected: " + amount;
+        _collected.text = "" + amount;
     }
 }
