@@ -1,11 +1,13 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ActivationManager : MonoBehaviour {
 	[SerializeField] private GameObject[] _menuButtons;
+	[SerializeField] private int bodyPart;
+	[SerializeField] private bool sendObject;
 	public GameObject _activeGameObject;
+	public event Action<GameObject, int> ChangeObject;
+	
 
 	private void Start() {
 		Subscribe(_menuButtons, Clicked);
@@ -15,6 +17,10 @@ public class ActivationManager : MonoBehaviour {
 		_activeGameObject.SetActive(false);
 		_activeGameObject = obj;
 		_activeGameObject.SetActive(true);
+
+		if (sendObject) {
+			ChangeObject(_activeGameObject, bodyPart);
+		}
 	}
 
 	public void Subscribe(GameObject[] buttons, Action<GameObject> method) {
