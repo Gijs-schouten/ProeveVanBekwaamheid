@@ -5,6 +5,7 @@ public class SaveLoad : MonoBehaviour {
 	[SerializeField] private GameObject[] _topItems;
 	[SerializeField] private GameObject[] _bottomItems;
 
+	[SerializeField] private bool _inCustomizer;
 	private SettingsStorage<PlayerData> st;
 
 	private void Start() {
@@ -14,12 +15,6 @@ public class SaveLoad : MonoBehaviour {
 		LoadCustomizationObject(_topItems, st.Data.top, "Top1");
 		LoadCustomizationObject(_bottomItems, st.Data.bottom,"Bottom1");
 	}
-
-	/*private void Update() {
-		if (Input.GetKeyDown(KeyCode.S)) {
-			SaveCustomization();
-		}
-	}*/
 
 	public void SaveCustomization() {
 		st.Data.hair = GetActiveItem(_hairItems);
@@ -32,8 +27,12 @@ public class SaveLoad : MonoBehaviour {
 		for (int i = 0; i < items.Length; i++) {
 			if (i == item) {
 				items[i].SetActive(true);
-				ActivationManager manager = GameObject.Find(objectName).GetComponent<ActivationManager>();
-				manager._activeGameObject = items[i];
+
+				if (_inCustomizer) {
+					ActivationManager manager = GameObject.Find(objectName).GetComponent<ActivationManager>();
+					manager._activeGameObject = items[i];
+				}
+				
 			} else {
 				items[i].SetActive(false);
 			}
