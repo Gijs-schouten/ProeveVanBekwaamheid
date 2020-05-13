@@ -6,6 +6,8 @@ public class StartProgram : MonoBehaviour
 {
     [SerializeField]
     private GameObject _panel;
+    [SerializeField]
+    private GameObject _panel2;
 
     public void ToggleCanvas()
     {
@@ -19,4 +21,6 @@ public class StartProgram : MonoBehaviour
             }
         } 
     }
+
+    
 }

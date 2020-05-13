@@ -16,14 +16,7 @@ public class AppearingButton : MonoBehaviour
 
     void Update()
     {
-        _distance = Vector2.Distance(transform.position, _player.transform.position);   
-        if(_distance <= _maxDistance)
-        {
-            _button.SetActive(true);
-        }
-        else
-        {
-            _button.SetActive(false);
-        }
+        _distance = Vector2.Distance(transform.position, _player.transform.position);
+        _button.SetActive(_distance <= _maxDistance);
     }
 }
