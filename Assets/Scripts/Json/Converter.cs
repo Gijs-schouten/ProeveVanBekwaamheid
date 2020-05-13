@@ -13,8 +13,8 @@ public class Converter<T> {
 		return _jsonData;
 	}
 
-	public T GetDataFromJson(string jsonString) {
-		T data = JsonUtility.FromJson<T>(jsonString); ;
+	public T GetDataFromJson(string jsonstring) {
+		T data = JsonUtility.FromJson<T>(jsonstring); ;
 		return data;
 	}
 }

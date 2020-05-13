@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class ActivationManager : MonoBehaviour {
 	[SerializeField] private GameObject[] _menuButtons;
-	[SerializeField] private int bodyPart;
-	[SerializeField] private bool sendObject;
+	[SerializeField] private int _bodyPart;
+	[SerializeField] private bool _sendObject;
 	public GameObject _activeGameObject;
 	public event Action<GameObject, int> ChangeObject;
 	
@@ -18,8 +18,8 @@ public class ActivationManager : MonoBehaviour {
 		_activeGameObject = obj;
 		_activeGameObject.SetActive(true);
 
-		if (sendObject) {
-			ChangeObject(_activeGameObject, bodyPart);
+		if (_sendObject) {
+			ChangeObject(_activeGameObject, _bodyPart);
 		}
 	}
 
