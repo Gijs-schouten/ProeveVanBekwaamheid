@@ -7,7 +7,7 @@ public class Character : MonoBehaviour {
 	public GameObject[] characterObjects;
 	public ActivationManager[] characterManagers;
 
-	private void Start() {
+	private void start() {
 		Subscribe(characterManagers, AddObject);
 
 		for (int i = 0; i < characterObjects.Length; i++) {

@@ -2,10 +2,10 @@
 using UnityEngine;
 
 public class Button : MonoBehaviour {
-	public GameObject obj;
+	[SerializeField] private GameObject _obj;
 	public event Action<GameObject> Clicked;
 
 	public void Click() {
-		Clicked?.Invoke(obj);
+		Clicked?.Invoke(_obj);
 	}
 }
