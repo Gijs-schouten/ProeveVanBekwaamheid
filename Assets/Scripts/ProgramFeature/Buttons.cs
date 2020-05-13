@@ -5,16 +5,15 @@ using UnityEngine;
 public class Buttons : MonoBehaviour
 {
     [SerializeField]
-    private GameObject _bridge;
+    private List <GameObject> _bugs;
     private Animator _anim;
+    private int index;
 
-    void Start()
-    {
-        _anim = _bridge.GetComponent<Animator>();
-    }
-
+   
     public void RightAnswer()
     {
+        _anim = _bugs[index].GetComponent<Animator>();
         _anim.SetBool("Open", true);
+        index++;
     }
 }

@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private Jump _jump;
     private Rigidbody2D _rB;
     private bool _facingRight;
+    private bool _isMoving;
     
 
     void Start()
@@ -29,6 +30,15 @@ public class PlayerMovement : MonoBehaviour
         _horizontal = Input.GetAxisRaw("Horizontal");
         _horizontalMove = _horizontal * movementSpeed;
         _anim.SetFloat("Speed", Mathf.Abs(_horizontalMove));
+        if (Input.GetAxisRaw("horizontal") >= 0.01f && !_isMoving)
+        {
+            _isMoving = true;
+        }
+        else
+        {
+            _isMoving = false;
+        }
+
     }
 
     private void FixedUpdate()

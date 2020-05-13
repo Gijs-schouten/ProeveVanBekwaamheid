@@ -12,5 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e5eebd9cfc2e74ba7f4e6486f184b3, type: 3}
   m_Name: Vraag1_Uitleg
   m_EditorClassIdentifier: 
-  uitleg: Gijs Schouten is maagd
-  berendUitleg: yes you have
+  uitleg: Kijk! Dit is al het eerste probleem! We zullen een stukje code moeten kiezen
+    om hier iets neer te zetten wat ons naar beneden helpt! Een stukje code begint
+    en eindigt altijd met een Hoofdletter en eindigt met een ; En daarin zit dan
+    het woord van het object wat we neer willen zetten! Laten we proberen om hier
+    iets te coderen!
+  berendUitleg: " Let op! Als je een fout antwoord kiest zal de code een \u2018Bug\u2019
+    worden, een foute code! Je zal dan een hartje verliezen dus kijk goed of de code
+    compleet is en of het het juiste object is! "

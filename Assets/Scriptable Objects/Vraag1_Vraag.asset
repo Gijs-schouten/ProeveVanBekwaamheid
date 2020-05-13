@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aabb82ddbeb3ee84fa69b81dcf62daf4, type: 3}
   m_Name: Vraag1_Vraag
   m_EditorClassIdentifier: 
-  vraag: 
-  berendUitleg: 
-  antwoord1: 
-  antwoord2: 
-  antwoord3: 
+  vraag: Er is geen brug geplaatst. Welk antwoord past in de zin? Plaats GameObject
+    "?"
+  berendUitleg: kanker
+  antwoord1: kanker
+  antwoord2: kanker
+  antwoord3: kanker
