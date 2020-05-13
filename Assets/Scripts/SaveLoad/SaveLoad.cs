@@ -9,19 +9,19 @@ public class SaveLoad : MonoBehaviour {
 
 	private void Start() {
 		st = new SettingsStorage<PlayerData>(Application.persistentDataPath + "/saves/PlayerData.json", new PlayerData());
-
+		
 		LoadCustomizationObject(hairItems, st.Data.hair, "Hair1");
 		LoadCustomizationObject(topItems, st.Data.top, "Top1");
 		LoadCustomizationObject(bottomItems, st.Data.bottom,"Bottom1");
 	}
 
-	private void Update() {
+	/*private void Update() {
 		if (Input.GetKeyDown(KeyCode.S)) {
 			SaveCustomization();
 		}
-	}
+	}*/
 
-	private void SaveCustomization() {
+	public void SaveCustomization() {
 		st.Data.hair = GetActiveItem(hairItems);
 		st.Data.top = GetActiveItem(topItems);
 		st.Data.bottom = GetActiveItem(bottomItems);
