@@ -14,6 +14,7 @@ public class ActivationManager : MonoBehaviour {
 	}
 
 	private void Clicked(GameObject obj) {
+		if(_activeGameObject != null)
 		_activeGameObject.SetActive(false);
 		_activeGameObject = obj;
 		_activeGameObject.SetActive(true);
