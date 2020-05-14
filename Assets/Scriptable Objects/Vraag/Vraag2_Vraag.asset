@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aabb82ddbeb3ee84fa69b81dcf62daf4, type: 3}
   m_Name: Vraag2_Vraag
   m_EditorClassIdentifier: 
-  vraag: poep
-  berendUitleg: poep
-  antwoord1: poep
-  antwoord2: poep
-  antwoord3: poep
+  vraag: 'Welke antwoord past in dit stukje code: private bool Brug = '
+  berendUitleg: "Let op! Als je een fout antwoord kiest zal de code een \u2018Bug\u2019
+    worden, een foute code! Je zal dan een hartje verliezen dus kijk goed of de code
+    compleet is en of het het juiste object is! "
+  antwoord1: 100'
+  antwoord2: True;
+  antwoord3: Dit is een Brug;

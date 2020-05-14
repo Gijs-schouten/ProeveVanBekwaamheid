@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vraag: Er is geen brug geplaatst. Welk antwoord past in de zin? Plaats GameObject
     "?"
-  berendUitleg: kanker
-  antwoord1: kanker
-  antwoord2: kanker
-  antwoord3: kanker
+  berendUitleg: "Let op! Als je een fout antwoord kiest zal de code een \u2018Bug\u2019
+    worden, een foute code! Je zal dan een hartje verliezen dus kijk goed of de code
+    compleet is en of het het juiste object is! "
+  antwoord1: brug
+  antwoord2: Brug;
+  antwoord3: Brug
