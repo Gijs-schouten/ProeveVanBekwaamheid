@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vraag: Er is geen brug geplaatst. Welk antwoord past in de zin? Plaats GameObject
     "?"
-  berendUitleg: 
-  antwoord1: 
-  antwoord2: 
-  antwoord3: 
+  berendUitleg: let op als je een vraag fout beantwoord verlies je een hartje
+  antwoord1: Brug
+  antwoord2: Brug;
+  antwoord3: brug
