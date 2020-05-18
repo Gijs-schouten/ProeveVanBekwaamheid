@@ -7,7 +7,7 @@ InputManager:
   m_Axes:
   - serializedVersion: 3
     m_Name: Horizontal
-    descriptiveName: 
+    descriptiveName: horizontal
     descriptiveNegativeName: 
     negativeButton: left
     positiveButton: right
