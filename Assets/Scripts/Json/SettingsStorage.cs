@@ -34,11 +34,6 @@ public class SettingsStorage<T> {
 		Converter<T> converter = new Converter<T>(_data);
 		await WaitForFileData();
 		File.WriteAllText(_saveFile, converter.GetDataToJson());
-
-		/*if (new FileInfo(_saveFile).Length == 0) {
-			File.WriteAllText(_saveFile, converter.GetDataToJson());
-		}*/
-
 	}
 
 	async Task<bool> WaitForFileData() {
