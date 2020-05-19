@@ -5,6 +5,12 @@ using UnityEngine;
 public class KillPlayer : MonoBehaviour
 {
     [SerializeField] private Animator anim;
+    [SerializeField] private PauseMenu _pauseMenu;
+
+    void Start()
+    {
+        
+    }
 
     void Update()
     {
