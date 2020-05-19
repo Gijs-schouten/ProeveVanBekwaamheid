@@ -2,16 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Threading;
 
 public class Character : MonoBehaviour {
 	public GameObject[] characterObjects;
 	public ActivationManager[] characterManagers;
+	private bool isLoaded;
 
 	private void Start() {
 		Subscribe(characterManagers, AddObject);
 
-		for (int i = 0; i < characterObjects.Length; i++) {
+		/*for (int i = 0; i < characterObjects.Length; i++) {
 			characterObjects[i] = characterManagers[i]._activeGameObject;
+		}*/
+	}
+
+	private void Update() {
+		if (characterObjects[0] == null) {
+			print("ass");
+			for (int i = 0; i < characterObjects.Length; i++) {
+				characterObjects[i] = characterManagers[i]._activeGameObject;
+			}
 		}
 	}
 
