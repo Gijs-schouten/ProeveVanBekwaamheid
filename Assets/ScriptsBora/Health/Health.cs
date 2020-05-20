@@ -18,7 +18,6 @@ public class Health : MonoBehaviour
 
     void Update()
     {
-
         if(health > heartsAmount)
         {
             health = heartsAmount;
@@ -29,16 +28,27 @@ public class Health : MonoBehaviour
             if (i < health)
             {
                 hearts[i].sprite = fullHeart;
-            } else {
+            }
+            else
+            {
                 hearts[i].sprite = emptyHeart;
             }
 
             if (i < heartsAmount)
             {
                 hearts[i].enabled = true;
-            } else {
+            }
+            else
+            {
                 hearts[i].enabled = false;
             }
         }
+        /*
+        if (Input.GetKeyDown("space"))
+        {
+        //Add the line below to wherever you want the player to take damage
+            health--;
+        }
+        */
     }
 }
