@@ -10,9 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9e5eebd9cfc2e74ba7f4e6486f184b3, type: 3}
-  m_Name: Vraag2_Uitleg
+  m_Name: Vraag4
   m_EditorClassIdentifier: 
-  uitleg: 'Oei, ook hier hebben de Bugs het level kapot gemaakt! Wat denk je dat
-    we kunnen gebruiken om naar de overkant te komen? '
-  berendUitleg: 'Weet je nog? Een stukje code begint en eindigt altijd met een Hoofdletter 
-    als dit niet zo is, is de code niet compleet! '
+  uitleg: 
+  berendUitleg: 
