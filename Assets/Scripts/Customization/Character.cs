@@ -19,7 +19,6 @@ public class Character : MonoBehaviour {
 
 	private void Update() {
 		if (characterObjects[0] == null) {
-			print("ass");
 			for (int i = 0; i < characterObjects.Length; i++) {
 				characterObjects[i] = characterManagers[i]._activeGameObject;
 			}

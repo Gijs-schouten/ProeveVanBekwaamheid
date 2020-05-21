@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class ActivateObject : MonoBehaviour {
 	[SerializeField] private GameObject ActiveObject;
-	[SerializeField] private GameObject UnactiveObject;
+	[SerializeField] private GameObject InactiveObject;
 
 	public void SwitchActiveObject() {
-		UnactiveObject.SetActive(true);
-		ActiveObject.SetActive(false);
+		GameObject temp = ActiveObject;
+		ActiveObject = InactiveObject;
+		InactiveObject = temp;
+
+		ActiveObject.SetActive(true);
+		InactiveObject.SetActive(false);
 	}
 }
