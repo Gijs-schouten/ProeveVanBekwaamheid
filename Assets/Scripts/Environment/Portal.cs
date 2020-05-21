@@ -22,7 +22,7 @@ public class Portal : MonoBehaviour {
 
 	private IEnumerator StartTeleport() {
 		GetComponent<ActivateObject>().SwitchActiveObject();
-		_player.GetComponent<TestMovement>().enabled = false;
+		_player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 		yield return new WaitForSeconds(_phaseOneDelay);
 		StartCoroutine("TeleportPlayer");
 	}
