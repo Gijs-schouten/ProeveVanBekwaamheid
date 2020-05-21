@@ -22,7 +22,7 @@ public class PlayerAnimations : MonoBehaviour
 
     private void WalkAnimationTrigger(bool isWalking)
     {
-        _anim.SetBool("Open", isWalking);
+        _anim.SetBool("isWalking", isWalking);
     }
 
 }

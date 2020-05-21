@@ -29,14 +29,14 @@ public class PlayerMovement : MonoBehaviour
     {
         CheckInput();
         _horizontal = Input.GetAxisRaw("Horizontal");
-        if (Input.GetAxisRaw("Horizontal") >= 0.01f && !_isMoving)
+        if (Input.GetAxisRaw("Horizontal") >= 0.01f || Input.GetAxisRaw("Horizontal") <= - 0.01f && !_isMoving)
         {
             _isMoving = true;
             TriggerWalking(true);
         }
         else
         {
-            if (_isMoving)
+            if (_isMoving && Input.GetAxisRaw("Horizontal") == 0)
             {
                 _isMoving = false;
                 TriggerWalking(false);
