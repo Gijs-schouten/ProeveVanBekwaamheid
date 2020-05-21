@@ -11,10 +11,6 @@ public class Character : MonoBehaviour {
 
 	private void Start() {
 		Subscribe(characterManagers, AddObject);
-
-		/*for (int i = 0; i < characterObjects.Length; i++) {
-			characterObjects[i] = characterManagers[i]._activeGameObject;
-		}*/
 	}
 
 	private void Update() {
