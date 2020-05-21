@@ -42,7 +42,7 @@ public class Jump : MonoBehaviour
     }
     public  bool IsGrounded()
     {
-       RaycastHit2D raycastHit2D = Physics2D.BoxCast(_boxCollider2D.bounds.center, _boxCollider2D.size, 0f, Vector2.down, .01f, _groundLayer);
+       RaycastHit2D raycastHit2D = Physics2D.BoxCast(_boxCollider2D.bounds.center, _boxCollider2D.size, 0f, Vector2.down, .1f, _groundLayer);
         _movement.movementSpeed = 15f;
         if (raycastHit2D.collider != null)
         {
