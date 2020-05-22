@@ -28,6 +28,7 @@ public class Jump : MonoBehaviour
     {
         if(IsGrounded() && Input.GetKeyDown(KeyCode.Space))
         {
+            Debug.Log("dikke negersaus");
             _rB.velocity = Vector2.up * JumpForce;
             _jumped = true;
         }
@@ -44,11 +45,11 @@ public class Jump : MonoBehaviour
     {
        RaycastHit2D raycastHit2D = Physics2D.BoxCast(_boxCollider2D.bounds.center, _boxCollider2D.size, 0f, Vector2.down, .1f, _groundLayer);
         _movement.movementSpeed = 15f;
-        if (raycastHit2D.collider != null)
+       /* if (raycastHit2D.collider != null)
         {
             _jumped = false;
             Jumping(false);     
-        }
+        }*/
         return raycastHit2D.collider != null;
         
     }
