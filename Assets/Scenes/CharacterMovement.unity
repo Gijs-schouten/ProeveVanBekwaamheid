@@ -235,12 +235,24 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2749977251292100449}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &831560346 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2749977250462641659, guid: 2f91cfe47be9588418897e2fbd2afcf3,
-    type: 3}
-  m_PrefabInstance: {fileID: 2749977251292100449}
+--- !u!114 &831560340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831560339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbaf052c51cf1eb469618408a76f992f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  heartsAmount: 3
+  hearts: []
+  fullHeart: {fileID: 0}
+  emptyHeart: {fileID: 0}
+  _killPlayer: {fileID: 0}
 --- !u!1 &1023301685
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,8 +533,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1498b142dee444b9b074d4102cf6fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 831560346}
-  offset: {x: 1, y: 1, z: -10}
+  _target: {fileID: 0}
+  _smoothSpeed: 0.125
+  _offset: {x: 0, y: 5, z: -9}
 --- !u!1 &1252377521
 GameObject:
   m_ObjectHideFlags: 0
@@ -1264,6 +1277,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837574948024467102, guid: 7ec7e2a97ef105e43a4a084882958f3a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 363
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837574948024467102, guid: 7ec7e2a97ef105e43a4a084882958f3a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -187.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ec7e2a97ef105e43a4a084882958f3a, type: 3}

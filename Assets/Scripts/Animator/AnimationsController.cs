@@ -5,7 +5,7 @@ using UnityEngine;
 public class AnimationsController : MonoBehaviour
 {
     [SerializeField] private Animator _anim;
-    //[SerializeField] private PauseMenu _pauseMenu;
+
     
 
     private void Update()
