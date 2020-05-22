@@ -43,12 +43,13 @@ public class Health : MonoBehaviour
                 hearts[i].enabled = false;
             }
         }
-        /*
-        if (Input.GetKeyDown("space"))
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Enemy")
         {
-        //Add the line below to wherever you want the player to take damage
             health--;
+            Destroy(other.gameObject);
         }
-        */
     }
 }
