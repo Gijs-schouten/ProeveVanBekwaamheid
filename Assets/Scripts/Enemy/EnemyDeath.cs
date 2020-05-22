@@ -14,6 +14,6 @@ public class EnemyDeath : MonoBehaviour {
 	private void KillEnemy() {
 		_animator.SetBool("Die", true);
 		GetComponent<EnemyMovement>().enabled = false;
-		GetComponent<EnemyHitbox>().enabled = true;
+		Destroy(GetComponent<EnemyHitbox>());
 	}
 }

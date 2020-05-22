@@ -22,6 +22,7 @@ public class EnemyHitbox : MonoBehaviour {
 		if(playerY > transform.position.y) {
 			HitEnemy?.Invoke();
 		} else {
+			print("im ass");
 			collision.gameObject.GetComponent<Health>().TakeDamage();
 		}
 	}
