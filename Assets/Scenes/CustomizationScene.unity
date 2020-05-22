@@ -3720,6 +3720,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5518894612110890035, guid: ae91c52481c79584f9fa50e142509d4c,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 54bde06a80e46c2449ed82a2ba5491c7, type: 2}
     - target: {fileID: 5518894612121091165, guid: ae91c52481c79584f9fa50e142509d4c,
         type: 3}
       propertyPath: m_Name
@@ -3835,5 +3840,15 @@ PrefabInstance:
       propertyPath: _inCustomizer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5518894612238926888, guid: ae91c52481c79584f9fa50e142509d4c,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ed10c2be6a3bd5949a3a91c9cf721cd4, type: 2}
+    - target: {fileID: 5518894612699936744, guid: ae91c52481c79584f9fa50e142509d4c,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 5e5ecca5a57a040419ac7ea7ae95136b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae91c52481c79584f9fa50e142509d4c, type: 3}
