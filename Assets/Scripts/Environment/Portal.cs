@@ -1,17 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Portal : MonoBehaviour {
-	private SceneLoader _loader;
 	[SerializeField] private GameObject _player;
-
 	[SerializeField] private float _phaseOneDelay;
 	[SerializeField] private float _phaseTwoDelay;
 
-	private void Start() {
-		_loader = GetComponent<SceneLoader>();
-	}
+	public event Action PlayerTeleported;
 
 	private void OnTriggerEnter2D(Collider2D collision) {
 		if(collision.tag == "Player") {
@@ -31,7 +28,7 @@ public class Portal : MonoBehaviour {
 		Destroy(_player);
 		GetComponent<ActivateObject>().SwitchActiveObject();
 		yield return new WaitForSeconds(_phaseTwoDelay);
-		_loader.LoadScene();
+		PlayerTeleported?.Invoke();
 	}
 
 }

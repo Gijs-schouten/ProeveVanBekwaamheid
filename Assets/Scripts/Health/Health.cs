@@ -16,11 +16,17 @@ public class Health : MonoBehaviour
     [SerializeField]
     private Sprite emptyHeart;
 
-    private float _timeLeft = 2;
+	[SerializeField] private float iFrames;
+    private float _timeLeft;
     private bool _canDamage = true;
-    [SerializeField] private KillPlayer _killPlayer;
+    private KillPlayer _killPlayer;
 
-    void Update()
+	private void Start() {
+		_killPlayer = GetComponent<KillPlayer>();
+		_timeLeft = iFrames;
+	}
+
+	void Update()
     {
         if(health > heartsAmount)
         {
@@ -47,13 +53,15 @@ public class Health : MonoBehaviour
                 hearts[i].enabled = false;
             }
         }
+
         if (!_canDamage)
         {
             _timeLeft -= Time.deltaTime;
+			print(iFrames);
             if(_timeLeft <= 0)
             {
                 _canDamage = true;
-                _timeLeft = 2;
+                _timeLeft = iFrames;
             }
         }
 
@@ -62,15 +70,16 @@ public class Health : MonoBehaviour
     {
         if (col.gameObject.tag == "Enemy" && _canDamage)
         {
-            TakeDamage();
             _canDamage = false;
         }
     }
 
     public void TakeDamage()
     {
-        health--;
-
+		if (_canDamage) {
+			health--;
+		}
+        
         if(health == 0)
         {
             _killPlayer.PlayerKiller();
