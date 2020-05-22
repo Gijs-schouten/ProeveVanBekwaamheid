@@ -5,10 +5,7 @@ using UnityEngine;
 public class KillPlayer : MonoBehaviour
 {
     [SerializeField] private Animator anim;
-    [SerializeField] private PauseMenu _pauseMenu;
-
-
-
+    
     void Update()
     {
         if(transform.position.y < -30)
@@ -20,6 +17,7 @@ public class KillPlayer : MonoBehaviour
     public void PlayerKiller()
     {
         anim.SetBool("isOpen", true);
+		GetComponent<PlayerMovement>().enabled = false;
     }
 
 }
