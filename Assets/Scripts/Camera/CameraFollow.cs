@@ -10,7 +10,7 @@ public class CameraFollow : MonoBehaviour {
 	[SerializeField] private float _yMax = -24;
 
 	void FixedUpdate() {
-		if(transform.position.y > -24){
+		if(transform.position.y > _yMax){
 			MoveCamera();
 		}
 	}
