@@ -16,6 +16,10 @@ public class Health : MonoBehaviour
     [SerializeField]
     private Sprite emptyHeart;
 
+    private float _timeLeft = 2;
+    private bool _canDamage = true;
+    [SerializeField] private KillPlayer _killPlayer;
+
     void Update()
     {
         if(health > heartsAmount)
@@ -43,13 +47,35 @@ public class Health : MonoBehaviour
                 hearts[i].enabled = false;
             }
         }
-    }
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Enemy")
+        if (!_canDamage)
         {
-            health--;
-            Destroy(other.gameObject);
+            _timeLeft -= Time.deltaTime;
+            if(_timeLeft <= 0)
+            {
+                _canDamage = true;
+                _timeLeft = 2;
+            }
+        }
+
+    }
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Enemy" && _canDamage)
+        {
+            TakeDamage();
+            _canDamage = false;
         }
     }
+
+    public void TakeDamage()
+    {
+        health--;
+
+        if(health == 0)
+        {
+            _killPlayer.PlayerKiller();
+        }
+
+    }
+
 }

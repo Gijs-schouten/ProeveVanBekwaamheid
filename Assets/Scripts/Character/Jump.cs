@@ -46,8 +46,7 @@ public class Jump : MonoBehaviour
         _movement.movementSpeed = 15f;
         if (raycastHit2D.collider != null)
         {
-           
-            Debug.Log("hallo meneer de uil");
+            _jumped = false;
             Jumping(false);     
         }
         return raycastHit2D.collider != null;
