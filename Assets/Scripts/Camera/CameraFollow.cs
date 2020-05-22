@@ -7,9 +7,12 @@ public class CameraFollow : MonoBehaviour {
 	[SerializeField] private Transform _target;
 	[SerializeField] private float _smoothSpeed = 0.125f;
 	[SerializeField] private Vector3 _offset = new Vector3(0,5,-9);
+	[SerializeField] private float _yMax = -24;
 
 	void FixedUpdate() {
-		MoveCamera();
+		if(transform.position.y > -24){
+			MoveCamera();
+		}
 	}
 
 	private void MoveCamera() {
