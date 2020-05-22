@@ -2,23 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimationsController : MonoBehaviour
-{
-    [SerializeField] private Animator _anim;
+public class AnimationsController : MonoBehaviour {
+	private Animator _anim;
+	[SerializeField] private Portal _portal;
 
-    
+	private void Start() {
+		_anim = GetComponent<Animator>();
+		_portal.PlayerTeleported += PlayAnim;
+	}
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            PlayAnim();
-        }
-    }
-
-    public void PlayAnim()
-    {
-        bool isOpen = _anim.GetBool("Open");
-        _anim.SetBool("Open", !isOpen);
-    }
+	public void PlayAnim() {
+		_anim.SetBool("Win", true);
+	}
 }
