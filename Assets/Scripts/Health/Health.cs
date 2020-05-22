@@ -57,7 +57,6 @@ public class Health : MonoBehaviour
         if (!_canDamage)
         {
             _timeLeft -= Time.deltaTime;
-			print(iFrames);
             if(_timeLeft <= 0)
             {
                 _canDamage = true;
