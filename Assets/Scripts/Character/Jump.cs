@@ -9,8 +9,9 @@ public class Jump : MonoBehaviour
     public event Action <bool> JumpAction ;
 
 
-    private bool _jumped;
+    [SerializeField]private bool _jumped;
     [SerializeField] private LayerMask _groundLayer;
+    public bool grounded;
     private PlayerMovement _movement;
     private BoxCollider2D _boxCollider2D;
     private Rigidbody2D _rB;
@@ -24,14 +25,29 @@ public class Jump : MonoBehaviour
         _rB = GetComponent<Rigidbody2D>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        if(IsGrounded() && Input.GetKeyDown(KeyCode.Space))
+        RaycastHit2D HitInfo;
+        HitInfo = Physics2D.BoxCast(_boxCollider2D.bounds.center, _boxCollider2D.bounds.size, 0f, Vector2.down, .1f, _groundLayer);
+        if (HitInfo)
+        {
+            grounded = true;
+        }
+        else
+        {
+            if (grounded)
+            {
+                grounded = false;
+            }
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
             _rB.velocity = Vector2.up * JumpForce;
             _jumped = true;
         }
-        if (!IsGrounded()){
+        if (!grounded){
             if (_jumped)
             {
                 Jumping(true);
@@ -40,9 +56,9 @@ public class Jump : MonoBehaviour
         }
 
     }
-    public  bool IsGrounded()
+    /*public  bool IsGrounded()
     {
-       RaycastHit2D raycastHit2D = Physics2D.BoxCast(_boxCollider2D.bounds.center, _boxCollider2D.size, 0f, Vector2.down, .1f, _groundLayer);
+       RaycastHit2D raycastHit2D = Physics2D.BoxCast(_boxCollider2D.bounds.center, _boxCollider2D.bounds.size, 0f, Vector2.down, 1f, _groundLayer);
         _movement.movementSpeed = 15f;
         if (raycastHit2D.collider != null)
         {
@@ -50,8 +66,8 @@ public class Jump : MonoBehaviour
             Jumping(false);     
         }
         return raycastHit2D.collider != null;
-        
-    }
+
+    }*/
  
     private void Jumping(bool isJumping)
     {
