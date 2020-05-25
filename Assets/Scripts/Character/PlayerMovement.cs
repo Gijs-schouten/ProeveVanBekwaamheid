@@ -47,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         ApplyMovement();
-        if (_jump.IsGrounded())
+        if (_jump.grounded)
         {
             Flip(_horizontal);
         }
