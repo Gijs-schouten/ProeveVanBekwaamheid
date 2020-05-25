@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e5eebd9cfc2e74ba7f4e6486f184b3, type: 3}
   m_Name: Vraag2_Uitleg
   m_EditorClassIdentifier: 
-  uitleg: 
-  berendUitleg: 
+  uitleg: "Een effici\xEBnte techniek om te programmeren is om met z'n twee\xEBn
+    achter een computer te zitten. Een die schrijft de code terwijl de ander de geschreven
+    code ter plekke reviewt."
+  berendUitleg: "Let op! Als je een fout antwoord kiest zal de code een \u2018Bug\u2019
+    worden, een foute code! Je zal dan een hartje verliezen dus kijk goed of de code
+    compleet is en of het het juiste object is! "

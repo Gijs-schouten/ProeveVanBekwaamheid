@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e5eebd9cfc2e74ba7f4e6486f184b3, type: 3}
   m_Name: Vraag3_Uitleg
   m_EditorClassIdentifier: 
-  uitleg: 
-  berendUitleg: 
+  uitleg: 'Een computer doet letterlijk wat het wordt opgevraagd. Afhankelijk van
+    waar je iets neerzet, kan het een geheel andere betekenis hebben. '
+  berendUitleg: "Let op! Als je een fout antwoord kiest zal de code een \u2018Bug\u2019
+    worden, een foute code! Je zal dan een hartje verliezen dus kijk goed of de code
+    compleet is en of het het juiste object is! "
