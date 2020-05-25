@@ -32,6 +32,8 @@ public class Jump : MonoBehaviour
         if (HitInfo)
         {
             grounded = true;
+            _jumped = false;
+            Jumping(false);
         }
         else
         {
@@ -44,31 +46,15 @@ public class Jump : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
+            Jumping(true);
             _rB.velocity = Vector2.up * JumpForce;
             _jumped = true;
         }
         if (!grounded){
-            if (_jumped)
-            {
-                Jumping(true);
-            }
             _movement.movementSpeed = 10f;
         }
 
-    }
-    /*public  bool IsGrounded()
-    {
-       RaycastHit2D raycastHit2D = Physics2D.BoxCast(_boxCollider2D.bounds.center, _boxCollider2D.bounds.size, 0f, Vector2.down, 1f, _groundLayer);
-        _movement.movementSpeed = 15f;
-        if (raycastHit2D.collider != null)
-        {
-            _jumped = false;
-            Jumping(false);     
-        }
-        return raycastHit2D.collider != null;
-
-    }*/
- 
+    } 
     private void Jumping(bool isJumping)
     {
         JumpAction?.Invoke(isJumping);
