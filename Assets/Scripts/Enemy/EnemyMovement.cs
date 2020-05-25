@@ -26,7 +26,6 @@ public class EnemyMovement : MonoBehaviour {
 		switch (_moveRight) {
 			case true:
 				Move(_walkingSpeed);
-				//transform.Translate(new Vector3(_walkingSpeed * Time.deltaTime, 0, 0));
 
 				if(transform.position.x >= xDistanceRight) {
 					FlipEnemy();
@@ -36,7 +35,6 @@ public class EnemyMovement : MonoBehaviour {
 
 			case false:
 				Move(-_walkingSpeed);
-				//transform.Translate(new Vector3(-_walkingSpeed * Time.deltaTime, 0, 0));
 
 				if (transform.position.x <= xDistanceLeft) {
 					FlipEnemy();
