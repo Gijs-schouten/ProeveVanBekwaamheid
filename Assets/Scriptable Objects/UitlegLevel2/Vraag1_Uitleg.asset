@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e5eebd9cfc2e74ba7f4e6486f184b3, type: 3}
   m_Name: Vraag1_Uitleg
   m_EditorClassIdentifier: 
-  uitleg: 
-  berendUitleg: 
+  uitleg: 'De eerste element van een array zit op een bepaald locatie dat met een
+    cijfer wordt opgeroepen in code. '
+  berendUitleg: "Let op! Als je een fout antwoord kiest zal de code een \u2018Bug\u2019
+    worden, een foute code! Je zal dan een hartje verliezen dus kijk goed of de code
+    compleet is en of het het juiste object is! "
