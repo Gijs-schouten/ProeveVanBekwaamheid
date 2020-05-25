@@ -4,13 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyHitbox : MonoBehaviour {
-	private BoxCollider2D _collider;
 	public event Action HitEnemy;
-	public event Action HitPlayer;
-
-	private void Start() {
-		_collider = GetComponent<BoxCollider2D>();
-	}
 
 	private void OnCollisionEnter2D(Collision2D collision) {
 		if (collision.gameObject.tag == "Player") {
@@ -22,7 +16,6 @@ public class EnemyHitbox : MonoBehaviour {
 		if(playerY > transform.position.y) {
 			HitEnemy?.Invoke();
 		} else {
-			print("im ass");
 			collision.gameObject.GetComponent<Health>().TakeDamage();
 		}
 	}
