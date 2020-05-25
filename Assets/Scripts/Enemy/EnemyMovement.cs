@@ -25,22 +25,33 @@ public class EnemyMovement : MonoBehaviour {
 	private void MoveEnemy() {
 		switch (_moveRight) {
 			case true:
-				transform.Translate(new Vector3(_walkingSpeed * Time.deltaTime, 0, 0));
+				Move(_walkingSpeed);
+				//transform.Translate(new Vector3(_walkingSpeed * Time.deltaTime, 0, 0));
 
 				if(transform.position.x >= xDistanceRight) {
-					_renderer.flipX = true;
-					_moveRight = false;
+					FlipEnemy();
 				}
+
 				break;
 
 			case false:
-				transform.Translate(new Vector3(-_walkingSpeed * Time.deltaTime, 0, 0));
+				Move(-_walkingSpeed);
+				//transform.Translate(new Vector3(-_walkingSpeed * Time.deltaTime, 0, 0));
 
 				if (transform.position.x <= xDistanceLeft) {
-					_renderer.flipX = false;
-					_moveRight = true;
+					FlipEnemy();
 				}
+
 				break;
 		}
+	}
+
+	private void Move(float speed) {
+		transform.Translate(new Vector3(speed * Time.deltaTime, 0, 0));
+	}
+
+	private void FlipEnemy() {
+		_moveRight = !_moveRight;
+		_renderer.flipX = !_renderer.flipX;
 	}
 }
