@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 1279186623742902277}
   - component: {fileID: 1279186623742902274}
   - component: {fileID: 1279186623742902275}
-  - component: {fileID: 1279186623742902272}
+  - component: {fileID: 8982354096918234111}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -212,8 +212,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1279186623742902272}
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 8982354096918234111}
+        m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -223,7 +223,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1279186623742902272
+--- !u!114 &8982354096918234111
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -232,7 +232,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1279186623742902334}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ad563dfe99c07c4085dcc1310064a70, type: 3}
+  m_Script: {fileID: 11500000, guid: 4fcca363533344644bab3aaa57b645a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneIndex: 0

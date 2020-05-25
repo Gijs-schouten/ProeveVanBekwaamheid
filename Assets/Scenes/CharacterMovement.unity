@@ -536,6 +536,7 @@ MonoBehaviour:
   _target: {fileID: 0}
   _smoothSpeed: 0.125
   _offset: {x: 0, y: 5, z: -9}
+  _yMax: -24
 --- !u!1 &1252377521
 GameObject:
   m_ObjectHideFlags: 0
@@ -1084,6 +1085,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2749977250462641652, guid: 2f91cfe47be9588418897e2fbd2afcf3,
+        type: 3}
+      propertyPath: JumpForce
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2749977250462641653, guid: 2f91cfe47be9588418897e2fbd2afcf3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2749977250462641659, guid: 2f91cfe47be9588418897e2fbd2afcf3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1277,6 +1288,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837574947707786181, guid: 7ec7e2a97ef105e43a4a084882958f3a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837574947707786181, guid: 7ec7e2a97ef105e43a4a084882958f3a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837574947707786181, guid: 7ec7e2a97ef105e43a4a084882958f3a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4837574948024467102, guid: 7ec7e2a97ef105e43a4a084882958f3a,
         type: 3}
