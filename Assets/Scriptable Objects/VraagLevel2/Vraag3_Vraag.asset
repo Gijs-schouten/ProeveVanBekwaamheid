@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aabb82ddbeb3ee84fa69b81dcf62daf4, type: 3}
   m_Name: Vraag3_Vraag
   m_EditorClassIdentifier: 
-  vraag: 
-  berendUitleg: 
-  antwoord1: 
-  antwoord2: 
-  antwoord3: 
+  vraag: 'Vijf is een: ?'
+  berendUitleg: "Let op! Als je een fout antwoord kiest zal de code een \u2018Bug\u2019
+    worden, een foute code! Je zal dan een hartje verliezen dus kijk goed of de code
+    compleet is en of het het juiste object is! "
+  antwoord1: getal
+  antwoord2: woord
+  antwoord3: boolean
