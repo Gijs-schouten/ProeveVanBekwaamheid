@@ -24,5 +24,5 @@ De game is volgens Scrum gemaakt in de Unity Engine met een looptijd van 10 weke
 | --- | --- | --- | --- |
 |Sprint 0| Briefing opdracht & opkomen met concepten. | Concepter pitchen binnen team en unaniem een kiezen. |
 |Sprint 1| Beginnen het project op te zetten. | De eerste level maken. | Mechanics testen of ze werken als gewenst. | 
-|Sprint 2| Implementeren van de eerste features. | Implementeren van de eerste lading art. | Verder implementeren van Art en beginnen aan level 2 |
+|Sprint 2| Implementeren van de eerste features. | Implementeren van de eerste lading art en beginnen aan Level 2. |  |
 |Sprint 3| Verder implementeren van Art & Animaties. Verder werken aan Level 2. Beginnen aan een Tutorial Level. | Game afronden. | Afmaken van resterende documentatie. |  
