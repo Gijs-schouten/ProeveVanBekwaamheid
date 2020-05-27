@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aabb82ddbeb3ee84fa69b81dcf62daf4, type: 3}
+  m_Name: Vraag2_Vraag
+  m_EditorClassIdentifier: 
+  vraag: 'Welke antwoord past in dit stukje code: private bool Brug = '
+  berendUitleg: "Let op! Als je een fout antwoord kiest zal de code een \u2018Bug\u2019
+    worden, een foute code! Je zal dan een hartje verliezen dus kijk goed of de code
+    compleet is en of het het juiste object is! "
+  antwoord1: 100'
+  antwoord2: True;
+  antwoord3: Dit is een Brug;

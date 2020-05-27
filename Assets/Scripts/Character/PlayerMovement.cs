@@ -1,17 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
     private Animator _anim;
 
+    public event Action <bool> WalkAction;
 
     public float movementSpeed;
     private float movementInputDirection;
     private float _horizontal;
-    private float _horizontalMove;
     private Jump _jump;
     private Rigidbody2D _rB;
     private bool _facingRight;
@@ -28,23 +29,25 @@ public class PlayerMovement : MonoBehaviour
     {
         CheckInput();
         _horizontal = Input.GetAxisRaw("Horizontal");
-        _horizontalMove = _horizontal * movementSpeed;
-        _anim.SetFloat("Speed", Mathf.Abs(_horizontalMove));
-        if (Input.GetAxisRaw("horizontal") >= 0.01f && !_isMoving)
+        if (Input.GetAxisRaw("Horizontal") >= 0.01f || Input.GetAxisRaw("Horizontal") <= - 0.01f && !_isMoving)
         {
             _isMoving = true;
+            TriggerWalking(true);
         }
         else
         {
-            _isMoving = false;
+            if (_isMoving && Input.GetAxisRaw("Horizontal") == 0)
+            {
+                _isMoving = false;
+                TriggerWalking(false);
+            }
         }
-
     }
 
     private void FixedUpdate()
     {
         ApplyMovement();
-        if (_jump.IsGrounded())
+        if (_jump.grounded)
         {
             Flip(_horizontal);
         }
@@ -70,4 +73,11 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = theScale;
         }
     }
+
+    private void TriggerWalking(bool isWalking)
+    {
+        WalkAction?.Invoke(isWalking); 
+    }
+
+
 }
