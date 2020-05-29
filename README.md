@@ -14,7 +14,7 @@ Artists:
  - Desiree Schepers
  
  ## Speelbare Game
-U kunt van [hier](https://github.com/Gijs-schouten/ProeveVanBekwaamheid/releases) de game voor Windows downloaden.
+U kunt van [hier](https://github.com/Gijs-schouten/ProeveVanBekwaamheid/releases) de game voor Windows en Mac downloaden.
 
 ## Development
 De game is volgens Scrum gemaakt in de Unity Engine met een looptijd van 10 weken verdeeld over 4 sprints. Onze schema is als volgt: 
