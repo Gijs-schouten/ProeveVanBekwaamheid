@@ -4,33 +4,42 @@ using UnityEngine;
 using System;
 using System.Threading;
 
-public class Character : MonoBehaviour {
+public class Character : MonoBehaviour 
+{
 	public GameObject[] characterObjects;
 	public ActivationManager[] characterManagers;
 	private bool isLoaded;
 
-	private void Start() {
+	private void Start() 
+	{
 		Subscribe(characterManagers, AddObject);
 	}
 
-	private void Update() {
-		if (characterObjects[0] == null) {
-			for (int i = 0; i < characterObjects.Length; i++) {
+	private void Update() 
+	{
+		if (characterObjects[0] == null) 
+		{
+			for (int i = 0; i < characterObjects.Length; i++) 
+			{
 				characterObjects[i] = characterManagers[i]._activeGameObject;
 			}
 		}
 	}
 
-	private void AddObject(GameObject obj, int index) {
+	private void AddObject(GameObject obj, int index) 
+	{
 		characterObjects[index] = obj;
 
-		for (int i = 0; i < characterObjects.Length; i++) {
+		for (int i = 0; i < characterObjects.Length; i++) 
+		{
 			characterObjects[i].GetComponent<Animator>().Play(0);
 		}
 	}
 
-	public void Subscribe(ActivationManager[] managers, Action<GameObject, int> method) {
-		for (int i = 0; i < managers.Length; i++) {
+	public void Subscribe(ActivationManager[] managers, Action<GameObject, int> method) 
+	{
+		for (int i = 0; i < managers.Length; i++) 
+		{
 			managers[i].ChangeObject += method;
 		}
 	}
