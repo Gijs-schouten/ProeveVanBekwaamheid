@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Movement for the enemy. Enemy walks _walkDistance from where he is placed to both sides of starting position. Keeps walking left and right 
+/// </summary>
+
 public class EnemyMovement : MonoBehaviour 
 {
 	[SerializeField] private float _walkingSpeed;
@@ -11,7 +15,7 @@ public class EnemyMovement : MonoBehaviour
 	private bool _moveRight;
 	private SpriteRenderer _renderer;
 	
-	void Start() 
+	private void Start() 
 	{
 		xDistanceRight = transform.position.x + _walkDistance;
 		xDistanceLeft = transform.position.x - _walkDistance;
@@ -20,11 +24,12 @@ public class EnemyMovement : MonoBehaviour
 	}
 
 	
-	void Update() 
+	private void FixedUpdate() 
 	{
 		MoveEnemy();
 	}
 
+	//Moves enemy left and right
 	private void MoveEnemy() 
 	{
 		switch (_moveRight) 
@@ -51,11 +56,13 @@ public class EnemyMovement : MonoBehaviour
 		}
 	}
 
+	//Movement logic
 	private void Move(float speed) 
 	{
 		transform.Translate(new Vector3(speed * Time.deltaTime, 0, 0));
 	}
 
+	//Flips the sprite and changes movement bool
 	private void FlipEnemy() 
 	{
 		_moveRight = !_moveRight;

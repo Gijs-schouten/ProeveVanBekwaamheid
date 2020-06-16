@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Saves and loads the character data in character customization into Json file using SettingStorage class
+/// </summary>
+
 public class SaveLoad : MonoBehaviour 
 {
 
@@ -19,6 +23,7 @@ public class SaveLoad : MonoBehaviour
 		LoadCustomizationObject(_bottomItems, st.Data.bottom,"Bottom1");
 	}
 
+	//Saves current customization items
 	public void SaveCustomization() 
 	{
 		st.Data.hair = GetActiveItem(_hairItems);
@@ -27,6 +32,7 @@ public class SaveLoad : MonoBehaviour
 		st.Save();
 	}
 
+	//Loads customization from file into objects
 	private void LoadCustomizationObject(GameObject[] items, int item, string objectName) 
 	{
 		for (int i = 0; i < items.Length; i++) 
@@ -49,6 +55,7 @@ public class SaveLoad : MonoBehaviour
 		}
 	}
 
+	//Gets current active cuztomization item
 	private int GetActiveItem(GameObject[] items) 
 	{
 		for (int i = 0; i < items.Length; i++) 

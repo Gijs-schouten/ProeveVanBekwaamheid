@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+/// <summary>
+/// Camera movement that automaticly follows _target
+/// </summary>
+
 public class CameraFollow : MonoBehaviour 
 {
 	[SerializeField] private Transform _target;
@@ -12,12 +16,14 @@ public class CameraFollow : MonoBehaviour
 
 	void FixedUpdate() 
 	{
+		//Stops camera movement if player falls out of map
 		if(transform.position.y > _yMax)
 		{
 			MoveCamera();
 		}
 	}
 
+	//Moves camera smoothly to _target
 	private void MoveCamera() 
 	{
 		Vector3 desiredPosition = _target.position + _offset;

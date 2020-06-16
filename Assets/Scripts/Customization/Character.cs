@@ -1,8 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using System;
-using System.Threading;
+
+/// <summary>
+/// Class that keeps track of enabled character objects and which should be enabled
+/// </summary>
 
 public class Character : MonoBehaviour 
 {
@@ -17,6 +18,7 @@ public class Character : MonoBehaviour
 
 	private void Update() 
 	{
+		//Loads active objects into characterObjects[]
 		if (characterObjects[0] == null) 
 		{
 			for (int i = 0; i < characterObjects.Length; i++) 
@@ -26,16 +28,19 @@ public class Character : MonoBehaviour
 		}
 	}
 
+	//Adds object to characterObjects array
 	private void AddObject(GameObject obj, int index) 
 	{
 		characterObjects[index] = obj;
 
 		for (int i = 0; i < characterObjects.Length; i++) 
 		{
+			//Syncs the player animations in cuztomization menu
 			characterObjects[i].GetComponent<Animator>().Play(0);
 		}
 	}
 
+	//Subscribes AddObject() to certain UI buttons
 	public void Subscribe(ActivationManager[] managers, Action<GameObject, int> method) 
 	{
 		for (int i = 0; i < managers.Length; i++) 
