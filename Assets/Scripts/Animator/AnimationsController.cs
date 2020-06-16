@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Controls portal animations
+/// </summary>
+
 public class AnimationsController : MonoBehaviour 
 {
 	private Animator _anim;

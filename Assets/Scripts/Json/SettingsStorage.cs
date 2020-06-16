@@ -1,6 +1,10 @@
 ﻿using System.IO;
 using System.Threading.Tasks;
 
+/// <summary>
+/// Class for saving and loading Json data. Creates the file if given path is null.
+/// </summary>
+
 public class SettingsStorage<T> 
 {
 	private string _saveFolder;
@@ -13,6 +17,7 @@ public class SettingsStorage<T>
 		set { Data = value; }
 	}
 
+	//Constructor assings values locally and calls InitializeSave()
 	public SettingsStorage(string filePathAndName, T fileType) 
 	{
 		_saveFile = filePathAndName;
@@ -22,6 +27,7 @@ public class SettingsStorage<T>
 		_data = Load(_data);
 	}
 
+	//Loads data into given Type
 	public T Load(T data) 
 	{
 		Converter<T> converter = new Converter<T>(data);
@@ -30,6 +36,7 @@ public class SettingsStorage<T>
 		return data;
 	}
 
+	//Saves current data into Json file
 	public async void Save() 
 	{
 		Converter<T> converter = new Converter<T>(_data);
@@ -37,6 +44,7 @@ public class SettingsStorage<T>
 		File.WriteAllText(_saveFile, converter.GetDataToJson());
 	}
 
+	//Waits if the Json file doesnt exist
 	async Task<bool> WaitForFileData() 
 	{
 		bool succeeded = false;
@@ -60,6 +68,7 @@ public class SettingsStorage<T>
 		return succeeded;
 	}
 
+	//Creates Json file and save folder if they dont exist
 	private void InitializeSave() 
 	{
 		if (!Directory.Exists(_saveFolder)) 

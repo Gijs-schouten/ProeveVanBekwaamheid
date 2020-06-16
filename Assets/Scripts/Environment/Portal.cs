@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+/// <summary>
+/// Class for teleporter at end of the level
+/// </summary>
+
 public class Portal : MonoBehaviour 
 {
 
@@ -12,6 +16,7 @@ public class Portal : MonoBehaviour
 
 	public event Action PlayerTeleported;
 
+	//Starts teleporting when player hits certain collider in teleporter
 	private void OnTriggerEnter2D(Collider2D collision) 
 	{
 		if(collision.tag == "Player") 
@@ -20,6 +25,7 @@ public class Portal : MonoBehaviour
 		}
 	}
 
+	//Freezes player and enables particle animation
 	private IEnumerator StartTeleport() 
 	{
 		GetComponent<ActivateObject>().SwitchActiveObject();
@@ -28,6 +34,7 @@ public class Portal : MonoBehaviour
 		StartCoroutine("TeleportPlayer");
 	}
 
+	//"Teleports" (destroys) player and changes back particle. Calls event after delay to show end screen.
 	private IEnumerator TeleportPlayer() 
 	{
 		Destroy(_player);

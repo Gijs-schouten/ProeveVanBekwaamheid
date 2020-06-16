@@ -3,6 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Hitbox for the enemy. Enemy gets hit when player jumps on enemy else player will get hit.
+/// </summary>
+
 public class EnemyHitbox : MonoBehaviour 
 {
 	public event Action HitEnemy;
