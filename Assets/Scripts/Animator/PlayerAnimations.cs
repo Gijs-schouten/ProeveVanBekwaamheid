@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Plays animation of the player
+/// </summary>
+
 public class PlayerAnimations : MonoBehaviour
 {
     [SerializeField]private Jump _jump;
@@ -17,11 +21,13 @@ public class PlayerAnimations : MonoBehaviour
 
     private void JumpAnimationTrigger(bool isJumping)
     {
+        //play animation Jump
         _anim.SetBool("isJumping", isJumping);
     }
 
     private void WalkAnimationTrigger(bool isWalking)
     {
+        //play animation Walking
         _anim.SetBool("isWalking", isWalking);
     }
 

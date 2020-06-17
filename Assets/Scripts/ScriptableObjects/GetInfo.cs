@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/// <summary>
+/// This class gets all the info from the scriptable object and puts them in a Textbox
+/// </summary>
 public class GetInfo : MonoBehaviour
 {
     [SerializeField] private List <InfoText> infotext;
@@ -32,7 +34,7 @@ public class GetInfo : MonoBehaviour
         _antwoord2.text = programtext[_sObjectIndex].antwoord2;
         _antwoord3.text = programtext[_sObjectIndex].antwoord3;
     }
-
+    //gets to the next scriptable object
     public void NextScriptable()
     {
         _sObjectIndex ++;

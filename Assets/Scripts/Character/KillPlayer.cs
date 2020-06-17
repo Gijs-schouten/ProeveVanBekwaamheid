@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Kills the player
+/// </summary>
 public class KillPlayer : MonoBehaviour
 {
     [SerializeField] private Animator anim;
@@ -13,7 +16,7 @@ public class KillPlayer : MonoBehaviour
             PlayerKiller();
         }
     }
-
+   //kills player and loads death screen
     public void PlayerKiller()
     {
         anim.SetBool("isOpen", true);

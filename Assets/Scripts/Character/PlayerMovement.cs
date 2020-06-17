@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-
+/// <summary>
+/// Class for the player movement
+/// </summary>
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
-    private Animator _anim;
 
     public event Action <bool> WalkAction;
 
@@ -29,10 +30,14 @@ public class PlayerMovement : MonoBehaviour
     {
         CheckInput();
         _horizontal = Input.GetAxisRaw("Horizontal");
+        //checks if the player is grounded while moving.
         if (Input.GetAxisRaw("Horizontal") >= 0.01f || Input.GetAxisRaw("Horizontal") <= - 0.01f && !_isMoving)
         {
-            _isMoving = true;
-            TriggerWalking(true);
+            if (_jump.grounded)
+            {
+                _isMoving = true;
+                TriggerWalking(true);
+            }
         }
         else
         {
@@ -62,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _rB.velocity = new Vector2(movementSpeed * movementInputDirection, _rB.velocity.y);
     }
-
+    //rotates the player
     private void Flip(float _horizontal)
     {
         if (_horizontal < 0 && !_facingRight || _horizontal > 0 && _facingRight)
@@ -73,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = theScale;
         }
     }
-
+    //sends a trigger to PlayerAnimations
     private void TriggerWalking(bool isWalking)
     {
         WalkAction?.Invoke(isWalking); 
