@@ -1,6 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
+/// <summary>
+/// Updates the amount of collected collectables
+/// </summary>
 public class Player : MonoBehaviour
 {
     private int _collected = 0;

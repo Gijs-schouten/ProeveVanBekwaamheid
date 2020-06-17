@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Updates the UI with the amount of collected collectables
+/// </summary>
 public class CollectUI : MonoBehaviour
 {
 
@@ -8,11 +11,11 @@ public class CollectUI : MonoBehaviour
     private Text _collected;
 
     [SerializeField]
-    private Player player;
+    private Player _player;
 
     void Start()
     {
-        player.CollectedValueChanged += SetValue;
+        _player.CollectedValueChanged += SetValue;
     }
 
     public void SetValue(int amount)

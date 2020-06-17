@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Checks wether the Player object collides with a collectable object
+/// </summary>
 public class Collector : MonoBehaviour
 {
     private Player _player;
