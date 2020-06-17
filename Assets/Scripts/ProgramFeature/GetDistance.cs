@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// Checks if the distance is short enough to the player. Then shows a button for the program question
+/// </summary>
 public class GetDistance : MonoBehaviour
 {
     [SerializeField] private List<GameObject> _distance;
-    [SerializeField] private GameObject _gameobject;
+    [SerializeField] private GameObject _gameObject;
     [SerializeField] private float _maxDistance;
      private float _vDistance;
 
@@ -20,12 +22,12 @@ public class GetDistance : MonoBehaviour
     {
         FetchDistance();
     }
-
+    //gets distance from player
     public void FetchDistance()
     {
-        _gameobject = _distance[_index];
+        _gameObject = _distance[_index];
     }
-
+    //gets to the next point
    public void NextDistance()
     {
 
@@ -34,7 +36,7 @@ public class GetDistance : MonoBehaviour
 
     void Update()
     {
-        _vDistance = Vector2.Distance(_gameobject.transform.position, _player.transform.position);
+        _vDistance = Vector2.Distance(_gameObject.transform.position, _player.transform.position);
         _button.SetActive(_vDistance <= _maxDistance);
     }
 }

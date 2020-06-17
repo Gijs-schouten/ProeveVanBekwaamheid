@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// This script plays animation for the Program Panel
+/// </summary>
 public class StartProgram : MonoBehaviour
 {
     [SerializeField]
     private GameObject _panel;
-    [SerializeField]
-    private GameObject _panel2;
 
     public void ToggleCanvas()
     {

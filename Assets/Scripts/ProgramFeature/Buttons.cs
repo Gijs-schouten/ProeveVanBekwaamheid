@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Plays animation of puzzle when right answers is aswered
+/// </summary>
+
 public class Buttons : MonoBehaviour
 {
     [SerializeField]

@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-
+/// <summary>
+/// Class for player Jump
+/// </summary>
 public class Jump : MonoBehaviour
 {
     public float JumpForce;
@@ -27,8 +29,9 @@ public class Jump : MonoBehaviour
 
     void Update()
     {
+        //checks if player is grounded
         RaycastHit2D HitInfo;
-        HitInfo = Physics2D.BoxCast(_boxCollider2D.bounds.center, _boxCollider2D.bounds.size, 0f, Vector2.down, .1f, _groundLayer);
+        HitInfo = Physics2D.BoxCast(_boxCollider2D.bounds.center, _boxCollider2D.bounds.size, 0f, Vector2.down, .01f, _groundLayer);
         if (HitInfo)
         {
             grounded = true;
@@ -43,7 +46,7 @@ public class Jump : MonoBehaviour
             }
         }
 
-
+        //moves the player up
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
             Jumping(true);
@@ -54,6 +57,7 @@ public class Jump : MonoBehaviour
             _movement.movementSpeed = 10f;
         }
 
+        //sends trigger to the PlayerAnimation script
     } 
     private void Jumping(bool isJumping)
     {

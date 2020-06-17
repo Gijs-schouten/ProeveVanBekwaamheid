@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// if you press the space bar longer the player will jump higher
+/// </summary>
 public class BetterJump : MonoBehaviour
 {
     private float _fallMultiplier = 8f;
