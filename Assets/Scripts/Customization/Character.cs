@@ -9,7 +9,7 @@ public class Character : MonoBehaviour
 {
 	public GameObject[] characterObjects;
 	public ActivationManager[] characterManagers;
-	private bool isLoaded;
+	private bool _isLoaded;
 
 	private void Start() 
 	{

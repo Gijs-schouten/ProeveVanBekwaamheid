@@ -7,16 +7,16 @@ using UnityEngine;
 /// </summary>
 
 public class ActivateObject : MonoBehaviour {
-	[SerializeField] private GameObject ActiveObject;
-	[SerializeField] private GameObject InactiveObject;
+	[SerializeField] private GameObject _activeObject;
+	[SerializeField] private GameObject _inactiveObject;
 
 	//Enables inactive object and disables active object
 	public void SwitchActiveObject() {
-		GameObject temp = ActiveObject;
-		ActiveObject = InactiveObject;
-		InactiveObject = temp;
+		GameObject temp = _activeObject;
+		_activeObject = _inactiveObject;
+		_inactiveObject = temp;
 
-		ActiveObject.SetActive(true);
-		InactiveObject.SetActive(false);
+		_activeObject.SetActive(true);
+		_inactiveObject.SetActive(false);
 	}
 }

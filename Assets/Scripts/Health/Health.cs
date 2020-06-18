@@ -3,18 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// This script manages the player's health
+/// </summary>
 public class Health : MonoBehaviour
 {
     [SerializeField]
-    private int health;
+    private int _health;
     [SerializeField]
-    private int heartsAmount;
+    private int _heartsAmount;
     [SerializeField]
-    private Image[] hearts;
+    private Image[] _hearts;
     [SerializeField]
-    private Sprite fullHeart;
+    private Sprite _fullHeart;
     [SerializeField]
-    private Sprite emptyHeart;
+    private Sprite _emptyHeart;
 
 	[SerializeField] private float iFrames;
     private float _timeLeft;
@@ -28,29 +31,29 @@ public class Health : MonoBehaviour
 
 	void Update()
     {
-        if(health > heartsAmount)
+        if(_health > _heartsAmount)
         {
-            health = heartsAmount;
+            _health = _heartsAmount;
         }
 
-        for (int i = 0; i < hearts.Length; i++)
+        for (int i = 0; i < _hearts.Length; i++)
         {
-            if (i < health)
+            if (i < _health)
             {
-                hearts[i].sprite = fullHeart;
+                _hearts[i].sprite = _fullHeart;
             }
             else
             {
-                hearts[i].sprite = emptyHeart;
+                _hearts[i].sprite = _emptyHeart;
             }
 
-            if (i < heartsAmount)
+            if (i < _heartsAmount)
             {
-                hearts[i].enabled = true;
+                _hearts[i].enabled = true;
             }
             else
             {
-                hearts[i].enabled = false;
+                _hearts[i].enabled = false;
             }
         }
 
@@ -76,10 +79,10 @@ public class Health : MonoBehaviour
     public void TakeDamage()
     {
 		if (_canDamage) {
-			health--;
+            _health--;
 		}
         
-        if(health == 0)
+        if(_health == 0)
         {
             _killPlayer.PlayerKiller();
         }
