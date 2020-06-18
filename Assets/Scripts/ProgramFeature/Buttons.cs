@@ -11,13 +11,13 @@ public class Buttons : MonoBehaviour
     [SerializeField]
     private List <GameObject> _bugs;
     private Animator _anim;
-    private int index;
+    private int _index;
 
    
     public void RightAnswer()
     {
-        _anim = _bugs[index].GetComponent<Animator>();
+        _anim = _bugs[_index].GetComponent<Animator>();
         _anim.SetBool("Open", true);
-        index++;
+        _index++;
     }
 }

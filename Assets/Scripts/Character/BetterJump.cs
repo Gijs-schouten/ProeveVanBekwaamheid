@@ -18,9 +18,17 @@ public class BetterJump : MonoBehaviour
 
     void Update()
     {
-        if(_rB.velocity.y < 0){
+        HighJump();
+    }
+
+    private void HighJump()
+    {
+        if (_rB.velocity.y < 0)
+        {
             _rB.velocity += Vector2.up * Physics2D.gravity.y * (_fallMultiplier - 1) * Time.deltaTime;
-        }else if (_rB.velocity.y > 0 && !Input.GetButton("Jump")) {
+        }
+        else if (_rB.velocity.y > 0 && !Input.GetButton("Jump"))
+        {
             _rB.velocity += Vector2.up * Physics2D.gravity.y * (_lowJumpMulitplier - 1) * Time.deltaTime;
         }
     }
