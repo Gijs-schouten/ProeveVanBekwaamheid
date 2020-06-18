@@ -36,6 +36,11 @@ public class GetDistance : MonoBehaviour
 
     void Update()
     {
+        UpdateDistance();
+    }
+
+    private void UpdateDistance()
+    {
         _vDistance = Vector2.Distance(_gameObject.transform.position, _player.transform.position);
         _button.SetActive(_vDistance <= _maxDistance);
     }
